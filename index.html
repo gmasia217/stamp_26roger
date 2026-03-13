@@ -11,7 +11,7 @@
 
 <meta name="robots" content="noindex, nofollow">
 
-<link rel="manifest" href="manifest.json">
+<link rel="manifest" href="./manifest.json">
 
 <title>라져 정산 v0.0.0</title>
 
@@ -23,32 +23,19 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;600;700&display=swap');
 
 :root{
-  /* 🌌 라져 배경 세트 (포스터의 심해/밤하늘 네이비톤 다크모드) */
   --bg:#071120; --bg2:#0d1b33; --bg3:#152745; --bg4:#1e3559;
-  
-  /* 📡 레이더 테두리선 (차분한 스틸 블루) */
   --brd:#2a4066; --brd2:#3c5685;
-  
-  /* ✈️ 텍스트 색상 (어두운 배경에 맞는 가독성 높은 흰색/회블루톤) */
   --txt:#ffffff; --txt2:#e0e7f1; --txt3:#aab7cc; --txt4:#7b8ba6; --dim:#576885;
   --dis:#1e3559;
-
-  /* 🩻 메인 포인트 컬러: 포스터의 '형광 시안 블루 (레이더 파장)' */
   --red:#00e5ff; --red2:#00b8cc; --red3:#66eeff; --red4:#00e5ff;
-  
-  /* 💡 서브 포인트 컬러: 포스터 비행기 정면의 '따뜻한 노란 불빛' */
   --grn:#ffcc00; --grn2:#ffdb4d;
-  
-  /* 🌊 기타 보조 색상 (물결의 딥블루, 구름의 화이트실버) */
   --blu:#5c8aff; --blu2:#8fb1ff;
   --ylw:#e2e8f0; --ylw2:#ffffff;
 }
 
-/* 폰트 & 기본 배경 */
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 body{background:var(--bg);color:var(--txt);font-family:'Pretendard', sans-serif;font-size:14px;min-height:100vh;overflow-x:hidden}
 
-/* HEADER */
 .hdr{position:relative;z-index:10;padding:22px 16px 11px;text-align:center;background:var(--bg);border-bottom:1px solid var(--brd)}
 .hdr::after{content:'';position:absolute;bottom:0;left:8%;right:8%;height:1px;background:linear-gradient(90deg,transparent,var(--red) 25%,var(--blu) 50%,var(--red) 75%,transparent);opacity:.5}
 .musical-lbl{font-size:9px;letter-spacing:.5em;color:var(--red3);text-transform:uppercase;margin-bottom:2px}
@@ -58,7 +45,6 @@ body{background:var(--bg);color:var(--txt);font-family:'Pretendard', sans-serif;
 .save-ind{font-size:11px;color:var(--dim);letter-spacing:.08em;padding:3px 9px;border:1px solid transparent;transition:all .3s}
 .save-ind.ok{color:var(--grn);border-color:var(--grn)}
 
-/* BTN */
 .btn{background:transparent;border:1px solid var(--brd2);color:var(--txt3);padding:7px 13px;cursor:pointer;font-family:inherit;font-size:12px;letter-spacing:.05em;transition:all .15s;white-space:nowrap;-webkit-appearance:none;border-radius:0;min-height:34px;touch-action:manipulation}
 .btn:active{border-color:var(--red3);color:var(--red3)}
 .btn.prim{background:var(--red);border-color:var(--red);color:#000;font-weight:700}
@@ -67,7 +53,6 @@ body{background:var(--bg);color:var(--txt);font-family:'Pretendard', sans-serif;
 .btn.ghost{color:var(--txt4);border-color:var(--brd)}
 .btn.ghost:active{color:var(--txt2);border-color:var(--brd2)}
 
-/* BOARDS */
 .boards{position:relative;z-index:10;padding:9px 14px;border-bottom:1px solid var(--brd);background:var(--bg2);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .boards-lbl{font-size:10px;letter-spacing:.2em;color:var(--txt4);text-transform:uppercase;white-space:nowrap}
 .bchips{display:flex;gap:6px;flex-wrap:wrap;flex:1}
@@ -77,10 +62,10 @@ body{background:var(--bg);color:var(--txt);font-family:'Pretendard', sans-serif;
 .bname:focus{border-bottom:1px solid var(--red)}
 .dis-badge{font-size:9px;color:var(--dim);margin-left:2px}
 
-/* WALLET */
 .wallet{position:relative;z-index:10;background:var(--bg2);border-bottom:1px solid var(--brd);padding:10px 14px 12px}
 .wallet-ttl{font-size:10px;letter-spacing:.2em;color:var(--txt2);text-transform:uppercase;margin-bottom:8px}
-.wallet-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.wallet-cards-2{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:8px}
+.wallet-cards-3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
 .wcard{background:var(--bg3);border:1px solid var(--brd2);padding:0;overflow:hidden}
 .wcard-name{font-size:9px;color:var(--txt2);letter-spacing:.08em;text-align:center;padding:6px 4px 5px;border-bottom:1px solid var(--brd);background:var(--bg4);font-weight:600}
 .wcard-body{display:grid;grid-template-columns:1fr 1fr}
@@ -97,7 +82,6 @@ body{background:var(--bg);color:var(--txt);font-family:'Pretendard', sans-serif;
 .wcard-detail{font-size:9px;color:var(--txt4);line-height:1.5}
 .wcard-detail .uc{color:var(--ylw2)}
 
-/* BOARD STATUS CARDS */
 .board-status{position:relative;z-index:10;background:var(--bg);border-bottom:1px solid var(--brd);padding:8px 14px}
 .bstatus-cards{display:flex;gap:8px;flex-wrap:wrap}
 .bscard{background:var(--bg2);border:1px solid var(--brd2);padding:9px 11px;min-width:100px;flex:1}
@@ -117,7 +101,6 @@ body{background:var(--bg);color:var(--txt);font-family:'Pretendard', sans-serif;
 .bscard-prog{height:3px;background:var(--brd);border-radius:1px;overflow:hidden}
 .bscard-prog-bar{height:100%;background:var(--red3);transition:width .3s}
 
-/* TABLE & MAIN AREA */
 .action-bar{position:fixed;bottom:0;left:0;right:0;z-index:50;background:linear-gradient(0deg, var(--bg) 70%, transparent);padding:9px 14px 16px;display:flex;gap:8px;justify-content:center}
 .modal, .wentry-modal, .menu-modal{background:var(--bg2);border-color:var(--brd2)}
 .twrap{overflow-x:auto;padding-bottom:68px;position:relative;z-index:10;-webkit-overflow-scrolling:touch}
@@ -132,7 +115,6 @@ td{padding:5px 5px;border-right:1px solid var(--brd);vertical-align:middle;text-
 td:first-child{padding-left:10px;text-align:left}
 td.dis-td{background:var(--dis);opacity:.45}
 
-/* INPUTS */
 .ci{background:transparent;border:none;color:var(--txt);font-family:inherit;font-size:12px;text-align:center;width:100%;outline:none;cursor:pointer;min-height:28px;-webkit-appearance:none}
 .ci:focus{background:rgba(0,229,255,.08);border-bottom:1px solid var(--red)}
 .ci.bold{font-weight:700;color:var(--red3)}
@@ -146,7 +128,6 @@ select.ci option{background:var(--bg3);color:var(--txt)}
 .fselect option{background:var(--bg3)}
 .finput::placeholder{color:var(--dim)}
 
-/* CHECKBOXES & BADGES */
 .prow{display:flex;justify-content:center;align-items:center;min-height:28px}
 .cbox{width:17px;height:17px;border:1px solid var(--brd2);cursor:pointer;position:relative;background:transparent;flex-shrink:0;touch-action:manipulation;display:inline-block}
 .cbox.checked{background:var(--red);border-color:var(--red)}
@@ -170,7 +151,6 @@ select.ci option{background:var(--bg3);color:var(--txt)}
 .empty{text-align:center;padding:50px 20px;color:var(--txt4);font-family:'Pretendard', sans-serif;font-size:15px;letter-spacing:.1em;position:relative;z-index:10}
 .empty::before{content:'◆';display:block;font-size:22px;color:var(--red);opacity:.3;margin-bottom:10px}
 
-/* OVERLAY / MODAL */
 .overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.87);z-index:200;justify-content:center;align-items:flex-end}
 .overlay.show{display:flex}
 .modal{background:var(--bg2);border:1px solid var(--brd2);border-bottom:none;border-top:2px solid var(--red);width:100%;max-width:520px;max-height:92vh;overflow-y:auto}
@@ -226,7 +206,7 @@ select.ci option{background:var(--bg3);color:var(--txt)}
 .wentry-row .we-del{color:var(--txt4);background:none;border:none;cursor:pointer;font-family:inherit;font-size:14px;padding:0 5px;min-height:22px}
 .wentry-row .we-del:active{color:var(--red3)}
 .wentry-empty{font-size:11px;color:var(--txt4);padding:8px 0}
-.cnt-inputs{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:6px}
+.cnt-inputs{display:grid;gap:7px;margin-top:6px}
 .cnt-inp-wrap{background:var(--bg3);border:1px solid var(--brd2);padding:8px;text-align:center}
 .cnt-inp-lbl{font-size:9px;color:var(--txt3);letter-spacing:.1em;margin-bottom:4px;text-transform:uppercase}
 .cnt-inp{width:100%;background:transparent;border:none;color:var(--grn2);font-family:inherit;font-size:22px;font-weight:700;outline:none;text-align:center;min-height:36px;-webkit-appearance:none}
@@ -279,7 +259,6 @@ select.ci option{background:var(--bg3);color:var(--txt)}
 
 <div class="hdr">
   <img src="roger_logo.png" alt="라져 로고" style="max-width: 200px; height: auto; display: block; margin: 0 auto 8px;">
-  
   <div class="point1"><span style="font-size:8px;opacity:.5;letter-spacing:.1em">v0.0.0</span></div>
   <div class="save-row">
     <span id="saveInd" class="save-ind">● 자동저장</span>
@@ -297,11 +276,9 @@ select.ci option{background:var(--bg3);color:var(--txt)}
     <div class="wallet-ttl" style="margin-bottom:0">◆ 할인권 지갑</div>
     <button class="btn sm grn" id="btnAddTicket" style="font-size:11px">+ 할인권 추가/차감</button>
   </div>
-  <div class="wallet-cards" id="walletCards">
-    <div class="wcard"><div class="wcard-name">재관람 할인표</div><div class="wcard-body"><div class="wcard-half cur"><div class="wcard-half-lbl">현재</div><div class="wcard-num zero">0</div><div class="wcard-detail">오늘까지 잔여</div></div><div class="wcard-half fin"><div class="wcard-half-lbl">최종</div><div class="wcard-num zero">0</div><div class="wcard-detail">입력 전체 기준</div></div></div></div>
-    <div class="wcard"><div class="wcard-name">50% 할인권</div><div class="wcard-body"><div class="wcard-half cur"><div class="wcard-half-lbl">현재</div><div class="wcard-num zero">0</div><div class="wcard-detail">오늘까지 잔여</div></div><div class="wcard-half fin"><div class="wcard-half-lbl">최종</div><div class="wcard-num zero">0</div><div class="wcard-detail">입력 전체 기준</div></div></div></div>
-    <div class="wcard"><div class="wcard-name">증빙 프리패스</div><div class="wcard-body"><div class="wcard-half cur"><div class="wcard-half-lbl">현재</div><div class="wcard-num zero">0</div><div class="wcard-detail">오늘까지 잔여</div></div><div class="wcard-half fin"><div class="wcard-half-lbl">최종</div><div class="wcard-num zero">0</div><div class="wcard-detail">입력 전체 기준</div></div></div></div>
-  </div>
+  
+  <div id="walletCards"></div>
+
   <div id="walletEntriesSection" style="margin-top:10px;display:none">
     <div style="font-size:9px;letter-spacing:.15em;color:var(--txt4);text-transform:uppercase;margin-bottom:5px">할인권 상세 기록</div>
     <table id="walletEntriesTable" style="width:100%;border-collapse:collapse;font-size:11px"></table>
@@ -347,17 +324,10 @@ select.ci option{background:var(--bg3);color:var(--txt)}
 
       <div class="fg">
         <label class="flbl">할인 종류
-          <span style="color:var(--ylw2);font-size:9px;margin-left:4px">(재관·50%·증빙 프리패스 선택 시 지갑 −1)</span>
+          <span style="color:var(--ylw2);font-size:9px;margin-left:4px;display:block;margin-top:2px">(재관할·창작산실할·40%·50%·증빙 프리패스 선택 시 지갑 −1)</span>
         </label>
         <select id="m_disc" class="fselect">
-          <option value="">없음</option>
-          <option value="재관">재관</option>
-          <option value="타임세일">타임세일</option>
-          <option value="프리뷰">프리뷰</option>
-          <option value="50%">50% 할인권 사용</option>
-          <option value="증빙 프리패스">증빙 프리패스</option>
-          <option value="교환">교환</option>
-        </select>
+          </select>
       </div>
 
       <div class="fg">
@@ -409,10 +379,20 @@ select.ci option{background:var(--bg3);color:var(--txt)}
       </div>
       <div class="fg">
         <label class="flbl">수량 입력</label>
-        <div class="cnt-inputs">
+        <div class="cnt-inputs" style="grid-template-columns:repeat(2,1fr);margin-bottom:7px;">
           <div class="cnt-inp-wrap">
             <div class="cnt-inp-lbl">재관람 할인표</div>
             <input type="number" id="we_re" class="cnt-inp" min="0" max="99" value="0">
+          </div>
+          <div class="cnt-inp-wrap">
+            <div class="cnt-inp-lbl">창작산실 할인표</div>
+            <input type="number" id="we_arko" class="cnt-inp" min="0" max="99" value="0">
+          </div>
+        </div>
+        <div class="cnt-inputs" style="grid-template-columns:repeat(3,1fr);">
+          <div class="cnt-inp-wrap">
+            <div class="cnt-inp-lbl">40% 할인권</div>
+            <input type="number" id="we_40" class="cnt-inp" min="0" max="99" value="0">
           </div>
           <div class="cnt-inp-wrap">
             <div class="cnt-inp-lbl">50% 할인권</div>
@@ -475,29 +455,27 @@ select.ci option{background:var(--bg3);color:var(--txt)}
 (function(){
 'use strict';
 
-// 1. 마일스톤 설정: 3회, 7회
+// 1. 마일스톤 설정: 3회(50%), 7회(OST)
 var MILESTONES=[3,7];
-// 2. 할인 권종 설정
-var DISC_OPTS=['','재관','타임세일','프리뷰','50%','증빙 프리패스','교환'];
-// 3. 새로운 로컬 스토리지 키
-var STORE_KEY='roger_v1'; 
+// 2. 할인 권종 순서 설정
+var DISC_OPTS=['','프리뷰','조예할','마티네할','창작산실할','재관할','40%','50%','증빙 프리패스','타임세일','교환'];
+// 3. 로컬 스토리지 키
+var STORE_KEY='roger_v2'; 
 var _mem=null;
 
 function storeGet(){try{var s=localStorage.getItem(STORE_KEY);return s?JSON.parse(s):null;}catch(e){return _mem;}}
 function storeSet(d){try{localStorage.setItem(STORE_KEY,JSON.stringify(d));_mem=d;}catch(e){_mem=d;}}
 
 var state=storeGet()||{boards:[{id:'b1',name:'1',initialStamps:0,disabledAfterDate:null}],performances:[],walletEntries:[]};
-if(!state.walletEntries){
-  state.walletEntries=[];
-  if(state.wallet){
-    var w=state.wallet;
-    if((w.add50||0)+(w.addCert||0)>0){
-      state.walletEntries.push({id:'mig1',date:'',add50:w.add50||0,addCert:w.addCert||0,note:'(이전 데이터)'});
-    }
-    delete state.wallet;
-  }
-}
+if(!state.walletEntries) state.walletEntries=[];
 state.boards.forEach(function(b){if(b.initialStamps===undefined)b.initialStamps=0;if(b.disabledAfterDate===undefined)b.disabledAfterDate=null;if(b.manualDisabled===undefined)b.manualDisabled=false;});
+
+// 드롭다운 세팅
+var discSelect = document.getElementById('m_disc');
+discSelect.innerHTML = DISC_OPTS.map(function(o){
+  var lbl = o===''?'없음':o==='40%'?'40% 할인권':o==='50%'?'50% 할인권':o;
+  return '<option value="'+o+'">'+lbl+'</option>';
+}).join('');
 
 function save(){
   storeSet(state);
@@ -542,21 +520,24 @@ function computeRows(){
       MILESTONES.forEach(function(m){if(snap[b.id]>=m&&!hit[b.id][m]){hit[b.id][m]=true;newMS[b.id].push(m);}});
     });
     
-    // 4. 50% 로직
+    // 3회차: 50% 1장 획득, 7회차: OST 획득
     var a50=0,aost=0;
     state.boards.forEach(function(b){
       newMS[b.id].forEach(function(m){if(m===3)a50+=1;if(m===7){aost+=1;}});
     });
     
     var eRe = 1; 
-    var uRe=(perf.discount==='재관')?1:0;
+    var uRe=(perf.discount==='재관할')?1:0;
+    var uArko=(perf.discount==='창작산실할')?1:0;
+    var u40=(perf.discount==='40%')?1:0;
     var u50=(perf.discount==='50%')?1:0;
     var uCert=(perf.discount==='증빙 프리패스')?1:0;
+    
     var ov=perf.overrides||{};
     var final={
       discount50:ov.discount50!==undefined?+ov.discount50:a50,
       ost:ov.ost!==undefined?+ov.ost:aost,
-      earnedRe:eRe, usedRe:uRe, used50:u50, usedCert:uCert
+      earnedRe:eRe, usedRe:uRe, usedArko:uArko, used40:u40, used50:u50, usedCert:uCert
     };
     var bold={
       discount50:(ov.discount50!==undefined)||(a50!==0),
@@ -567,21 +548,33 @@ function computeRows(){
 }
 
 function computeWallet(rows,cutoff){
-  var eRe=0,e50=0,eCert=0, uRe=0,u50=0,uCert=0; 
+  var eRe=0, eArko=0, e40=0, e50=0, eCert=0; 
+  var uRe=0, uArko=0, u40=0, u50=0, uCert=0; 
+  
   rows.forEach(function(r){
     eRe+=r.final.earnedRe;
     e50+=r.final.discount50;
     uRe+=r.final.usedRe;
+    uArko+=r.final.usedArko;
+    u40+=r.final.used40;
     u50+=r.final.used50;
     uCert+=r.final.usedCert;
   });
+  
   (state.walletEntries||[]).forEach(function(we){
     if(cutoff&&we.date&&we.date>cutoff)return;
     eRe+=(we.addRe||0);
+    eArko+=(we.addArko||0);
+    e40+=(we.add40||0);
     e50+=(we.add50||0);
     eCert+=(we.addCert||0);
   });
-  return{eRe,e50,eCert, uRe,u50,uCert, bRe:eRe-uRe, b50:e50-u50, bCert:eCert-uCert};
+  
+  return{
+    eRe,eArko,e40,e50,eCert, 
+    uRe,uArko,u40,u50,uCert, 
+    bRe:eRe-uRe, bArko:eArko-uArko, b40:e40-u40, b50:e50-u50, bCert:eCert-uCert
+  };
 }
 
 function computeCurrentFinal(allRows){
@@ -627,21 +620,10 @@ function toggleBoardManualDisable(id){
 }
 
 /* ── PERFORMANCE CRUD ── */
-function restoreBoardExchange(perf){
-  if(perf&&perf.exchange&&perf.exchange.type==='board'){
-    (perf.exchange.giveBoards||[]).forEach(function(bid){
-      var b=state.boards.find(function(x){return x.id===bid;});
-      if(b)b.disabledAfterDate=null;
-    });
-  }
-}
 function deletePerf(id){
   if(!confirm('이 회차를 삭제하시겠습니까?'))return;
-  var perf=state.performances.find(function(p){return p.id===id;});
-  restoreBoardExchange(perf);
   state.performances=state.performances.filter(function(p){return p.id!==id;});
-  if(state.walletEntries)
-    state.walletEntries=state.walletEntries.filter(function(we){return we.perfId!==id;});
+  if(state.walletEntries) state.walletEntries=state.walletEntries.filter(function(we){return we.perfId!==id;});
   save();render();
 }
 function updateField(pid,field,value){
@@ -805,8 +787,6 @@ function submitAdd(){
     return; 
   }
 
-  var exchange=null;
-
   if(_editId){
     var perf=state.performances.find(function(p){return p.id===_editId;});
     if(perf){
@@ -836,7 +816,7 @@ function openWalletModal(){
   ge('btnWSubmit').textContent='추가';
   ge('btnWSubmit').style.background='';ge('btnWSubmit').style.borderColor='';
   ge('we_date').value=todayStr();
-  ge('we_re').value=0;ge('we_50').value=0;ge('we_cert').value=0;ge('we_note').value='';
+  ge('we_re').value=0; ge('we_arko').value=0; ge('we_40').value=0; ge('we_50').value=0; ge('we_cert').value=0; ge('we_note').value='';
   renderWentryList();
   ge('walletOverlay').className='overlay show';
 }
@@ -850,8 +830,14 @@ function renderWentryList(){
     var isSub=we.type==='sub';
     var sign=isSub?'−':'+';
     var color=isSub?'var(--red3)':'var(--grn2)';
-    var aRe=Math.abs(we.addRe||0),a50=Math.abs(we.add50||0),aC=Math.abs(we.addCert||0);
-    if(aRe)vals.push('재관×'+aRe);if(a50)vals.push('50%×'+a50);if(aC)vals.push('증빙×'+aC);
+    var aRe=Math.abs(we.addRe||0), aArko=Math.abs(we.addArko||0), a40=Math.abs(we.add40||0), a50=Math.abs(we.add50||0), aC=Math.abs(we.addCert||0);
+    
+    if(aRe)vals.push('재관×'+aRe); 
+    if(aArko)vals.push('창산×'+aArko); 
+    if(a40)vals.push('40%×'+a40); 
+    if(a50)vals.push('50%×'+a50); 
+    if(aC)vals.push('증빙×'+aC);
+    
     return '<div class="wentry-row">'+
       '<span class="we-date">'+(we.date?formatDate(we.date):'날짜없음')+'</span>'+
       '<span class="we-vals" style="color:'+color+'">'+sign+vals.join(' / ')+'</span>'+
@@ -887,13 +873,16 @@ ge('btnAddTicket').addEventListener('click',openWalletModal);
 ge('btnWCancel').addEventListener('click',closeWalletModal);
 ge('btnWSubmit').addEventListener('click',function(){
   var aRe=Math.max(0,parseInt(ge('we_re').value)||0);
+  var aArko=Math.max(0,parseInt(ge('we_arko').value)||0);
+  var a40=Math.max(0,parseInt(ge('we_40').value)||0);
   var a50=Math.max(0,parseInt(ge('we_50').value)||0);
   var aCert=Math.max(0,parseInt(ge('we_cert').value)||0);
-  if(!aRe&&!a50&&!aCert){alert('수량을 1개 이상 입력하세요.');return;}
-  if(_weType==='sub'){aRe=-aRe;a50=-a50;aCert=-aCert;}
+  if(!aRe&&!aArko&&!a40&&!a50&&!aCert){alert('수량을 1개 이상 입력하세요.');return;}
+  if(_weType==='sub'){aRe=-aRe; aArko=-aArko; a40=-a40; a50=-a50; aCert=-aCert;}
   if(!state.walletEntries)state.walletEntries=[];
-  state.walletEntries.push({id:'w'+Date.now(),type:_weType,date:ge('we_date').value,addRe:aRe,add50:a50,addCert:aCert,note:ge('we_note').value.trim()});
-  ge('we_re').value=0;ge('we_50').value=0;ge('we_cert').value=0;ge('we_note').value='';
+  state.walletEntries.push({id:'w'+Date.now(),type:_weType,date:ge('we_date').value, addRe:aRe, addArko:aArko, add40:a40, add50:a50, addCert:aCert, note:ge('we_note').value.trim()});
+  
+  ge('we_re').value=0; ge('we_arko').value=0; ge('we_40').value=0; ge('we_50').value=0; ge('we_cert').value=0; ge('we_note').value='';
   save();render();renderWentryList();
 });
 ge('walletOverlay').addEventListener('click',function(e){if(e.target===this)closeWalletModal();});
@@ -969,20 +958,28 @@ function renderWallet(rows){
       '</div>'+
     '</div>';
   }
+  
+  // 지갑 2단 렌더링
   ge('walletCards').innerHTML=
-    card('재관람 할인표',wCur.bRe,wFin.bRe)+
-    card('50% 할인권',wCur.b50,wFin.b50)+
-    card('증빙 프리패스',wCur.bCert,wFin.bCert);
+    '<div class="wallet-cards-2">' +
+      card('재관람 할인표',wCur.bRe,wFin.bRe) +
+      card('창작산실 할인표',wCur.bArko,wFin.bArko) +
+    '</div>' +
+    '<div class="wallet-cards-3">' +
+      card('40% 할인권',wCur.b40,wFin.b40) +
+      card('50% 할인권',wCur.b50,wFin.b50) +
+      card('증빙 프리패스',wCur.bCert,wFin.bCert) +
+    '</div>';
 
   var entries=state.walletEntries||[];
   var useRows=[];
   (state.performances||[]).forEach(function(p){
     var d=p.discount;
-    if(d==='재관'||d==='50%'||d==='증빙 프리패스'){
+    if(d==='재관할'||d==='창작산실할'||d==='40%'||d==='50%'||d==='증빙 프리패스'){
       useRows.push({
         type:'use', date:p.date,
-        uRe:d==='재관'?1:0, u50:d==='50%'?1:0, uCert:d==='증빙 프리패스'?1:0,
-        note: d + ' 사용', pid:p.id
+        uRe:d==='재관할'?1:0, uArko:d==='창작산실할'?1:0, u40:d==='40%'?1:0, u50:d==='50%'?1:0, uCert:d==='증빙 프리패스'?1:0,
+        note: (d==='40%'||d==='50%' ? d+' 할인권' : d) + ' 사용', pid:p.id
       });
     }
   });
@@ -1012,7 +1009,7 @@ function renderWallet(rows){
   if(!allRows.length){sec.style.display='none';return;}
   sec.style.display='block';
   tbl.innerHTML='<thead><tr>'+
-    '<th style="text-align:left">날짜</th><th>유형</th><th>재관</th><th>50%</th><th>증빙</th><th>메모</th><th></th>'+
+    '<th style="text-align:left">날짜</th><th>유형</th><th>재관</th><th>창산</th><th>40%</th><th>50%</th><th>증빙</th><th>메모</th><th></th>'+
     '</tr></thead><tbody>'+
     allRows.map(function(r){
       if(r.type==='use'){
@@ -1020,6 +1017,8 @@ function renderWallet(rows){
           '<td>'+(r.date?formatDate(r.date):'—')+'</td>'+
           '<td style="color:var(--ylw2);font-size:9px;letter-spacing:.05em">사용</td>'+
           '<td style="color:var(--red3)">'+(r.uRe?'−1':'')+'</td>'+
+          '<td style="color:var(--red3)">'+(r.uArko?'−1':'')+'</td>'+
+          '<td style="color:var(--red3)">'+(r.u40?'−1':'')+'</td>'+
           '<td style="color:var(--red3)">'+(r.u50?'−1':'')+'</td>'+
           '<td style="color:var(--red3)">'+(r.uCert?'−1':'')+'</td>'+
           '<td style="color:var(--txt4);font-size:10px">'+esc(r.note)+'</td>'+
@@ -1030,6 +1029,8 @@ function renderWallet(rows){
           '<td>'+(r.date?formatDate(r.date):'—')+'</td>'+
           '<td style="color:var(--red3);font-size:9px;letter-spacing:.05em">◆획득</td>'+
           '<td style="color:var(--grn2);font-weight:700">'+(r.addRe?'+'+r.addRe:'')+'</td>'+
+          '<td></td>'+
+          '<td></td>'+
           '<td style="color:var(--grn2);font-weight:700">'+(r.add50?'+'+r.add50:'')+'</td>'+
           '<td></td>'+
           '<td style="color:var(--txt4);font-size:10px">'+esc(r.note)+'</td>'+
@@ -1042,11 +1043,13 @@ function renderWallet(rows){
         var entryColor=isSub?'var(--red3)':'var(--grn2)';
         var entryType=isSub?'차감':'획득';
         var entryTypeColor=isSub?'var(--red3)':'var(--grn2)';
-        var aRe=Math.abs(we.addRe||0),a50=Math.abs(we.add50||0),aC=Math.abs(we.addCert||0);
+        var aRe=Math.abs(we.addRe||0), aArko=Math.abs(we.addArko||0), a40=Math.abs(we.add40||0), a50=Math.abs(we.add50||0), aC=Math.abs(we.addCert||0);
         return '<tr>'+
           '<td>'+(we.date?formatDate(we.date):'—')+'</td>'+
           '<td style="color:'+entryTypeColor+';font-size:9px;letter-spacing:.05em">'+entryType+'</td>'+
           '<td style="color:'+entryColor+'">'+(aRe?sign+aRe:'')+'</td>'+
+          '<td style="color:'+entryColor+'">'+(aArko?sign+aArko:'')+'</td>'+
+          '<td style="color:'+entryColor+'">'+(a40?sign+a40:'')+'</td>'+
           '<td style="color:'+entryColor+'">'+(a50?sign+a50:'')+'</td>'+
           '<td style="color:'+entryColor+'">'+(aC?sign+aC:'')+'</td>'+
           '<td style="color:var(--txt4);font-size:10px">'+esc(we.note||'')+'</td>'+
@@ -1148,7 +1151,7 @@ function renderTable(){
     }).join('');
 
     var discOpts=DISC_OPTS.map(function(o){
-      var lbl=o===''?'없음':o==='50%'?'50% 사용':o==='증빙 프리패스'?'증빙 프리패스':o;
+      var lbl=o===''?'없음':o==='40%'?'40% 할인권':o==='50%'?'50% 할인권':o;
       return '<option value="'+o+'"'+(perf.discount===o?' selected':'')+'>'+lbl+'</option>';
     }).join('');
 
@@ -1157,6 +1160,8 @@ function renderTable(){
 
     var usedParts=[];
     if(row.final.usedRe)usedParts.push('재관');
+    if(row.final.usedArko)usedParts.push('창산');
+    if(row.final.used40)usedParts.push('40%');
     if(row.final.used50)usedParts.push('50%');
     if(row.final.usedCert)usedParts.push('증빙');
     var usedCell='<td>'+(usedParts.length?'<span class="used-chip">-'+usedParts.join('/')+'</span>':'')+'</td>';
@@ -1196,7 +1201,8 @@ function openDetail(pid){
   var sections=[];
 
   var basicChips=[];
-  if(perf.discount)basicChips.push('<span class="detail-chip '+(perf.discount==='재관'||perf.discount==='50%'||perf.discount==='증빙 프리패스'?'ylw':'')+'">'+esc(perf.discount==='50%'?'50% 사용':perf.discount==='증빙 프리패스'?'증빙 프리패스':perf.discount)+'</span>');
+  var isDiscount = ['재관할','창작산실할','40%','50%','증빙 프리패스'].indexOf(perf.discount) >= 0;
+  if(perf.discount)basicChips.push('<span class="detail-chip '+(isDiscount?'ylw':'')+'">'+esc(perf.discount==='40%'?'40% 사용':perf.discount==='50%'?'50% 사용':perf.discount)+'</span>');
   if(perf.multiplier>1)basicChips.push('<span class="detail-chip red">×'+perf.multiplier+' 배율</span>');
   if(row.final.ost)basicChips.push('<span class="detail-chip grn">♪ OST</span>');
   if(basicChips.length)sections.push('<div class="detail-section"><div class="detail-section-lbl">기본</div><div class="detail-chips">'+basicChips.join('')+'</div></div>');
@@ -1219,15 +1225,6 @@ function openDetail(pid){
   if(row.final.earnedRe)gained.push('<span class="detail-chip grn">재관람표×'+row.final.earnedRe+'</span>');
   if(row.final.discount50)gained.push('<span class="detail-chip grn">50%×'+row.final.discount50+'</span>');
   if(gained.length)sections.push('<div class="detail-section"><div class="detail-section-lbl">획득 할인권</div><div class="detail-chips">'+gained.join('')+'</div></div>');
-
-  if(perf.exchange){
-    var ex=perf.exchange;var exTxt='';
-    if(ex.type==='item')exTxt=esc(ex.item||'');
-    else if(ex.type==='comment')exTxt='💬 '+esc(ex.comment||'');
-    else if(ex.type==='ticket'){var tp=[];if(ex.t50)tp.push('50%×'+ex.t50);if(ex.tcert)tp.push('증빙×'+ex.tcert);exTxt='🎟 '+tp.join(' ');}
-    else{var gnames2=(ex.giveBoards||[]).map(function(bid){var b=state.boards.find(function(x){return x.id===bid;});return b?b.name:bid;}).join(', ');var recvTxt2=ex.receiveStamps?ex.receiveStamps+'◆':'새판';exTxt='🔄 '+(gnames2||'—')+' → '+recvTxt2;}
-    if(exTxt)sections.push('<div class="detail-section"><div class="detail-section-lbl">교환(구)</div><div class="detail-chips"><span class="detail-chip blu">'+exTxt+'</span></div></div>');
-  }
 
   body.innerHTML=sections.join('');
 
@@ -1257,12 +1254,8 @@ ge('detailEdit').addEventListener('click',function(){var pid=_detailPid;closeDet
 ge('detailDelete').addEventListener('click',function(){
   var pid=_detailPid;if(!pid)return;
   if(!confirm('이 회차를 삭제하시겠습니까?'))return;
-  var perf=state.performances.find(function(p){return p.id===pid;});
-  restoreBoardExchange(perf);
+  deletePerf(pid);
   closeDetail();
-  state.performances=state.performances.filter(function(p){return p.id!==pid;});
-  if(state.walletEntries)state.walletEntries=state.walletEntries.filter(function(we){return we.perfId!==pid;});
-  save();render();
 });
 
 /* ── GLOBAL EVENTS ── */
@@ -1281,18 +1274,17 @@ ge('mCSV').addEventListener('click',function(){
   closeMenuModal();var rows=computeRows();
   var hdrs=['날짜','시간대','할인','배율'];
   state.boards.forEach(function(b){hdrs.push(b.name+'(이번)');hdrs.push(b.name+'(누적)');});
-  hdrs.push('50%', 'OST', '사용', '교환');
+  hdrs.push('50%', 'OST', '사용');
   var lines=[hdrs.join(',')];
   rows.forEach(function(r){
     var cols=[r.perf.date,r.perf.timeSlot||'',r.perf.discount||'',r.perf.multiplier||1];
     state.boards.forEach(function(b){cols.push(r.rs[b.id]);cols.push(r.snap[b.id]);});
-    var used=[];if(r.final.usedRe)used.push('재관');if(r.final.used50)used.push('50%');if(r.final.usedCert)used.push('증빙');
-    var ex=r.perf.exchange;var exStr=ex?(ex.type==='item'?ex.item:(ex.giveBoards||[]).join(',')+'→'+ex.receiveStamps+'개'):'';
-    cols.push(r.final.discount50, r.final.ost, used.join('/'), exStr);
+    var used=[];if(r.final.usedRe)used.push('재관');if(r.final.usedArko)used.push('창산');if(r.final.used40)used.push('40%');if(r.final.used50)used.push('50%');if(r.final.usedCert)used.push('증빙');
+    cols.push(r.final.discount50, r.final.ost, used.join('/'));
     lines.push(cols.join(','));
   });
   var w=computeWallet(rows);
-  lines.push('');lines.push(',,,,,잔여 재관표,'+w.bRe+',잔여 50%,'+w.b50+',잔여 증빙,'+w.bCert);
+  lines.push('');lines.push(',,,,,잔여 재관표,'+w.bRe+',잔여 창산표,'+w.bArko+',잔여 40%,'+w.b40+',잔여 50%,'+w.b50+',잔여 증빙,'+w.bCert);
   dlBlob(new Blob(['\uFEFF'+lines.join('\n')],{type:'text/csv;charset=utf-8'}),'라져_정산_'+todayStr()+'.csv');
 });
 ge('mBackup').addEventListener('click',function(){
@@ -1323,7 +1315,7 @@ render();
 <script>
 if('serviceWorker' in navigator){
   window.addEventListener('load',function(){
-    navigator.serviceWorker.register('sw.js').then(function(reg){
+    navigator.serviceWorker.register('./sw.js').then(function(reg){
       console.log('SW registered:', reg.scope);
     }).catch(function(err){
       console.log('SW registration failed:', err);
